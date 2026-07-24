@@ -1,9 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
-
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
 ---
 
 <!DOCTYPE html>
@@ -89,46 +84,24 @@ const posts = (await getCollection('blog')).sort(
       .nav a:hover {
         background: #0052a3;
       }
-      .empty {
-        text-align: center;
-        color: #999;
-        padding: 2rem;
-      }
     </style>
   </head>
   <body>
     <h1>📝 Blog</h1>
-    {posts.length === 0 ? (
-      <div class="empty">
-        <p>No posts yet. Start writing your first post!</p>
+    <div class="post-list">
+      <div class="post-card">
+        <h2>
+          <a href="/blog/welcome">Welcome to My Tech Blog</a>
+        </h2>
+        <div class="post-meta">July 24, 2024 • By SDET Engineer</div>
+        <p class="post-description">Starting my journey as an SDET Engineer - this blog will document my insights on test automation, quality engineering, and building reliable systems.</p>
+        <div class="post-tags">
+          <span class="tag">#welcome</span>
+          <span class="tag">#sdet</span>
+          <span class="tag">#qa</span>
+        </div>
       </div>
-    ) : (
-      <div class="post-list">
-        {posts.map(post => (
-          <div class="post-card">
-            <h2>
-              <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-            </h2>
-            <div class="post-meta">
-              {post.data.pubDate.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-              {post.data.author && ` • By ${post.data.author}`}
-            </div>
-            <p class="post-description">{post.data.description}</p>
-            {post.data.tags.length > 0 && (
-              <div class="post-tags">
-                {post.data.tags.map(tag => (
-                  <span class="tag">#{tag}</span>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    )}
+    </div>
     <div class="nav">
       <a href="/">← Back Home</a>
     </div>
