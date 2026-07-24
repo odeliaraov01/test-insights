@@ -1,9 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
-
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-).slice(0, 5);
+const posts = [
+  {
+    slug: 'welcome',
+    data: {
+      title: 'Welcome to My Tech Blog',
+      description: 'Starting my journey as an SDET Engineer - this blog will document my insights on test automation, quality engineering, and building reliable systems.',
+      pubDate: new Date(2024, 6, 24),
+      tags: ['welcome', 'sdet', 'qa']
+    }
+  }
+];
 ---
 
 <!DOCTYPE html>
