@@ -3,5 +3,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://observer-blog.vercel.app',
+	site: 'https://test-insights.vercel.app',
 });
