@@ -1,0 +1,89 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const title = 'Welcome to My Tech Blog';
+const description = 'Starting my journey as an SDET Engineer - this blog will document my insights on test automation, quality engineering, and building reliable systems.';
+const pubDate = new Date('2024-07-24');
+const author = 'SDET Engineer';
+const tags = ['welcome', 'sdet', 'qa'];
+---
+
+<BlogLayout
+  title={title}
+  description={description}
+  pubDate={pubDate}
+  author={author}
+  tags={tags}
+>
+  <h2>Welcome! 👋</h2>
+  <p>This is your tech blog. Share your insights on test automation, quality engineering, and building reliable systems.</p>
+
+  <h2>What This Blog Is About</h2>
+  <p>This blog focuses on:</p>
+  <ul>
+    <li><strong>Test Automation</strong> - Strategies, frameworks, and best practices</li>
+    <li><strong>SDET Practices</strong> - Building test infrastructure and tools</li>
+    <li><strong>Quality Engineering</strong> - Metrics, processes, and cultural aspects</li>
+    <li><strong>Technical Deep Dives</strong> - Debugging, performance, and system design</li>
+  </ul>
+
+  <h2>How to Add Posts</h2>
+  <p>Simply create a new <code>.astro</code> file in the <code>src/pages/blog/</code> folder with this structure:</p>
+  <pre><code>{`---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+const title = 'Your Post Title';
+const description = 'Brief description';
+const pubDate = new Date('2024-07-24');
+const author = 'Your Name';
+const tags = ['tag1', 'tag2'];
+---
+
+<BlogLayout
+  title={title}
+  description={description}
+  pubDate={pubDate}
+  author={author}
+  tags={tags}
+>
+  Your HTML content here...
+</BlogLayout>`}</code></pre>
+
+  <h2>Features</h2>
+  <ul>
+    <li>✅ Fast static site generation</li>
+    <li>✅ Automatic tag organization</li>
+    <li>✅ SEO-optimized</li>
+    <li>✅ Clean, responsive design</li>
+    <li>✅ Free hosting on Vercel</li>
+  </ul>
+
+  <p><strong>Happy writing! 🚀</strong></p>
+</BlogLayout>
+
+<style>
+  h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+  }
+  pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+</style>
