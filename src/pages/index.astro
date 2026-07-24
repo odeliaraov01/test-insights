@@ -52,10 +52,11 @@ const posts = (await getCollection('blog')).sort(
         color: #0066cc;
       }
       .hero {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: url('/hero-bg.png') center/cover;
         color: white;
         padding: 6rem 2rem;
         text-align: center;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
       }
       .hero h1 {
         font-size: 3rem;
